@@ -7,9 +7,9 @@
 class CSemaphore
 {
 private:
-    std::mutex              m_mutex;
-    std::condition_variable m_cv;
-    int                     m_count = 0;
+    std::mutex              m_mutex;        //!< Internal mutex
+    std::condition_variable m_cv;           //!< Internal conditional variable
+    int                     m_count = 0;    //!< The counter
 
 public:
     //! Release semaphore

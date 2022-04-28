@@ -42,7 +42,7 @@ void CSynchronizedThread::Loop()
 void CSynchronizedThread::WaitForTaskFinished()
 {
     m_finishSemaphore.Acquire();
-    assert(m_tasks.size() == 0); // mutex should not be needed (threads waits for new task)
+    assert(m_tasks.size() == 0);
 }
 
 void CSynchronizedThread::StopAndJoin()
