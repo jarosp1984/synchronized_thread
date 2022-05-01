@@ -16,3 +16,7 @@ add_executable(synchronized_thread
     synchronized_future.cpp
     synchronized_task.h
 )
+
+if(UNIX AND NOT APPLE)
+    target_link_libraries(synchronized_thread pthread) 
+endif()
