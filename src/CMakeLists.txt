@@ -34,6 +34,6 @@ add_executable(st_test
     synchronized_task.h
 )
 if(UNIX AND NOT APPLE)
-    target_link_libraries(test pthread) 
+    target_link_libraries(st_test pthread) 
 endif()
-add_test(NAME test1 COMMAND test)
+add_test(NAME all_tests COMMAND st_test)
