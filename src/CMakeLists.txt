@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 project(synchronized_thread LANGUAGES CXX)
+enable_testing()
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -21,7 +22,7 @@ if(UNIX AND NOT APPLE)
     target_link_libraries(sample pthread) 
 endif()
 
-add_executable(test
+add_executable(st_test
     test.cpp
     thread.h
     semaphore.h
