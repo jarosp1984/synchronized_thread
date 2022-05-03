@@ -22,7 +22,7 @@ class CSampleTask2 : public CSynchronizedTask
         printf("Sample task 2 started\n");
 
         printf("Sample task 2 ended\n");
-        return true;
+        return false;
     }
 };
 
@@ -31,23 +31,32 @@ int main()
     // Starting the thread
     CSynchronizedThread thread;
 
-    // Doing the job
+    // Working with task 1
     {
         CSampleTask1* task = new CSampleTask1();
 
         thread.AddTask(task);
         CSynchronizedFuture future(task);
 
-        future.WaitAndGetResult();
+        //Do some work on main thread
+        printf("Doing main thread job 1\n");
+
+        bool res = future.WaitAndGetResult();
+        printf("Task 1 result: %s\n", res ? "true" : "false");
     }
 
+    // Working with task 2
     {
         CSampleTask2* task = new CSampleTask2();
 
         thread.AddTask(task);
         CSynchronizedFuture future(task);
 
-        future.WaitAndGetResult();
+        //Do some work on main thread
+        printf("Doing main thread job 2\n");
+
+        bool res = future.WaitAndGetResult();
+        printf("Task 2 result: %s\n", res ? "true" : "false");
     }
 
     // Stopping the thread
