@@ -4,6 +4,6 @@ A small library for serially executing tasks on a separate thread, with an abilt
 Depends only on the standard library.
 
 Compilation tested in:
-- MS Visual C++ 2019
+- MS C/C++ 19.27.29110 for x64
 - GCC 9.4 under Ubuntu 20.04 (GitHub workflow)
 - Apple clang 12.0.0
