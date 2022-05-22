@@ -5,5 +5,5 @@ Depends only on the standard library.
 
 Compilation tested in:
 - MS C/C++ 19.27.29110 for x64
-- GCC 9.4 under Ubuntu 20.04 (GitHub workflow)
+- GCC 9.4 under Ubuntu 20.04 (local and GitHub workflow)
 - Apple clang 12.0.0
